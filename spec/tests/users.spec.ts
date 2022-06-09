@@ -3,10 +3,10 @@ import StatusCodes from 'http-status-codes';
 import { SuperTest, Test, Response } from 'supertest';
 
 import app from '@server';
-import userDao from '@daos/user-dao';
-import User, { IUser } from '@models/user-model';
+import userDao from 'src/old/daos/user-dao';
+import User, { IUser } from 'src/old/models/user-model';
 import { pErr } from '@shared/functions';
-import { p as userPaths } from '@routes/user-router';
+import { p as userPaths } from 'src/old/routes/user-router';
 import { ParamMissingError, UserNotFoundError } from '@shared/errors';
 
 type TReqBody = string | object | undefined;

@@ -67,10 +67,10 @@
     "forceConsistentCasingInFileNames": true,  /* Disallow inconsistently-cased references to the same file. */
     "paths": {
       "@daos/*": [
-        "src/daos/*"
+        "src/old/daos/*"
       ],
       "@models/*": [
-        "src/models/*"
+        "src/old/models/*"
       ],
       "@shared/*": [
         "src/shared/*"
@@ -79,10 +79,10 @@
         "src/server"
       ],
       "@services/*": [
-        "src/services/*"
+        "src/old/services/*"
       ],
       "@routes/*": [
-        "src/routes/*"
+        "src/old/routes/*"
       ]
     },
     "useUnknownInCatchVariables": false

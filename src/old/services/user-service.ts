@@ -1,5 +1,5 @@
-import userDao from '@daos/user-dao';
-import { IUser } from '@models/user-model';
+import userDao from 'src/old/daos/user-dao';
+import { IUser } from 'src/old/models/user-model';
 import { UserNotFoundError } from '@shared/errors';
 
 
