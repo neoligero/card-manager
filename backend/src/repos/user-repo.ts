@@ -1,6 +1,6 @@
 
 import { User } from '@modules/users/domain';
-import { makeId } from '@shared/functions';
+import { getRandomString } from '@shared/functions';
 import orm from './mock-orm';
 
 
@@ -57,7 +57,7 @@ async function getAll(): Promise<User[]> {
  */
 async function add(user: User): Promise<void> {
   const db = await orm.openDb();
-  user._id = makeId(10);
+  user._id = getRandomString(10);
   db.users.push(user);
   return orm.saveDb(db);
 }

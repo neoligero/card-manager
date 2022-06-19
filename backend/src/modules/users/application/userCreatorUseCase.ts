@@ -1,11 +1,7 @@
 import { CustomLogger } from '@shared/logger';
 import { UseCase } from '@shared/usecase';
 import { inject, injectable } from 'inversify';
-import { User, UserRepository } from '../domain';
-
-export interface CreateUserParams {
-  user: User;
-}
+import { CreateUserParams, User, UserRepository } from '../domain';
 
 export type UserCreatorUseCase = UseCase<CreateUserParams, Promise<User>>;
 
@@ -19,7 +15,7 @@ export class UserCreator implements UserCreatorUseCase {
   async invoke(params: CreateUserParams) {
     this.logInvoke(params);
 
-    return await this.userRepository.insertOne(params.user);
+    return await this.userRepository.insertOne(params);
   }
 
   private logInvoke(params: CreateUserParams) {

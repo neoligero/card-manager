@@ -9,14 +9,12 @@ const { CREATED, OK } = StatusCodes;
 @injectable()
 export class UserController {
   constructor(
-    @inject('UserCreatorUseCase') private userCreator: UserCreatorUseCase
+    @inject('UserCreator') private userCreator: UserCreatorUseCase
   ) { }
 
   async createUser(req: Request, res: Response, next: NextFunction) {
     try {
-      const { user } = req.body;
-      console.log(req.body);
-      const userCreated = await this.userCreator.invoke(user);
+      const userCreated = await this.userCreator.invoke(req.body);
       return res.status(CREATED).json(userCreated);
     } catch (err) {
       next(err);

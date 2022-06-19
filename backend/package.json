@@ -1,6 +1,10 @@
 {
   "name": "ddd-app",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": {
+    "name": "José Manuel Ligero Marquez",
+    "email": "neoligero@gmail.com"
+  },
   "scripts": {
     "build": "./node_modules/.bin/ts-node build.ts",
     "lint": "eslint . --ext .ts",

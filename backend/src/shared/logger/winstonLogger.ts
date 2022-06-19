@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import { injectable } from 'inversify';
-import { CustomLogger } from './CustomLogger';
+import { CustomLogger } from './customLogger';
 
 @injectable()
 export class WinstonLogger implements CustomLogger {

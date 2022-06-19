@@ -4,7 +4,7 @@ import { injectable } from "inversify";
 class EmailAdapter {
 
   public async notify(msg: string): Promise<void> {
-    this.sendMail(msg);
+    await this.sendMail(msg);
   }
 
   private async sendMail(msg: string) {

@@ -4,7 +4,7 @@ import { injectable } from 'inversify';
 class LogglyAdapter {
 
   public async notify(msg: string): Promise<void> {
-    this.sendLog(msg);
+    await this.sendLog(msg);
   }
 
   private async sendLog(msg: string) {

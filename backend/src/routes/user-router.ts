@@ -8,11 +8,11 @@ const userController = container.get<UserController>('UserController');
 /**
  * Add one user.
  */
-router.post('/', userController.createUser);
+router.post('/', userController.createUser.bind(userController));
 
 /**
  * Get one user.
  */
-router.get('/', userController.getUser);
+router.get('/', userController.getUser.bind(userController));
 
 export default router;

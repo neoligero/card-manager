@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
 import helmet from 'helmet';
@@ -7,15 +8,16 @@ import express, { NextFunction, Request, Response } from 'express';
 import StatusCodes from 'http-status-codes';
 import 'express-async-errors';
 
-import baseRouter from './routes/api';
 import logger from 'jet-logger';
 import { CustomError } from '@shared/errors';
 import { initInversify } from './inversify.dependencies';
 
-
-// Constants
-const app = express();
 initInversify();
+
+import baseRouter from './routes/api';
+
+const app = express();
+
 
 /***********************************************************************************
  *                                  Database

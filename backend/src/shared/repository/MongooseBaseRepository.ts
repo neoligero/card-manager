@@ -1,11 +1,13 @@
 import { BaseRepository, MongooseEntity } from './BaseRepository';
 import { Document } from 'mongoose';
+import { injectable, unmanaged } from 'inversify';
 
+@injectable()
 export class MongooseBaseRepository<T extends MongooseEntity, R = T> implements BaseRepository<T, R> {
   domainObjectKlass;
   model;
 
-  constructor(domainObjectKlass: any, model: any) {
+  constructor(@unmanaged() domainObjectKlass: any, @unmanaged() model: any) {
     this.domainObjectKlass = domainObjectKlass;
     this.model = model;
   }

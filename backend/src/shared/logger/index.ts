@@ -1,2 +1,2 @@
-export * from './CustomLogger';
-export * from './WinstonLogger';
+export * from './customLogger';
+export * from './winstonLogger';
